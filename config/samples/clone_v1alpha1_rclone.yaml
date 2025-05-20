@@ -1,0 +1,14 @@
+apiVersion: clone.abarrak.com/v1alpha1
+kind: Rclone
+metadata:
+  labels:
+    app.kubernetes.io/name: rclone-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: rclone-sample
+spec:
+  config:
+    command: "rclone --help"
+    config: |
+      [my-local-remote]
+      type = local
+      root_folder = /tmp
