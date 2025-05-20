@@ -1,0 +1,37 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of the go coverage tool
+*.coverprofile
+
+# Dependency directories (remove the comment below if you use Go modules)
+vendor/
+
+# Go build artifacts
+bin/
+build/
+dist/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+
+# Kubernetes manifests and operator-sdk generated files
+deploy/
+bundle/
+manifests/
+operator-sdk/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+.DS_Store
