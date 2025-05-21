@@ -51,7 +51,12 @@ var _ = Describe("Rclone Controller", func() {
 						Name:      resourceName,
 						Namespace: "default",
 					},
-					// TODO(user): Specify other spec details if needed.
+					Spec: clonev1alpha1.RcloneSpec{
+						Config: clonev1alpha1.RcloneConfig{
+							Config:  "[local]\n	type = local\n  noun = /tmp\n",
+							Command: "rclone --help",
+						},
+					},
 				}
 				Expect(k8sClient.Create(ctx, resource)).To(Succeed())
 			}
@@ -77,8 +82,6 @@ var _ = Describe("Rclone Controller", func() {
 				NamespacedName: typeNamespacedName,
 			})
 			Expect(err).NotTo(HaveOccurred())
-			// TODO(user): Add more specific assertions depending on your controller's reconciliation logic.
-			// Example: If you expect a certain status condition after reconciliation, verify it here.
 		})
 	})
 })
