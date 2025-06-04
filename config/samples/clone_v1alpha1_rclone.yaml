@@ -1,4 +1,4 @@
-apiVersion: clone.abarrak.com/v1alpha1
+apiVersion: abarrak.com/v1alpha1
 kind: Rclone
 metadata:
   labels:

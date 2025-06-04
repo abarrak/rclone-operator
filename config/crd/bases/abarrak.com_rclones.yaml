@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.17.2
-  name: rclones.clone.abarrak.com
+  name: rclones.abarrak.com
 spec:
-  group: clone.abarrak.com
+  group: abarrak.com
   names:
     kind: Rclone
     listKind: RcloneList

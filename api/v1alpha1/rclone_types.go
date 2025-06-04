@@ -6,25 +6,17 @@ import (
 
 // RcloneSpec defines the desired state of Rclone.
 type RcloneSpec struct {
+	// Configuration for the rclone task.
 	// +kubebuilder:validation:Required
-	Config RcloneConfig `json:"config,omitempty"`
-	Type   string       `json:"type,omitempty"`
+	Configuration RcloneConfiguration `json:"configuration,omitempty"`
+	// Type specifies the type of rclone operation.
+	Type string `json:"type,omitempty"`
 }
 
 // RcloneStatus defines the observed state of Rclone.
 type RcloneStatus struct {
-	// Represents the observations of a RcloneStatus's current state.
-	// RcloneStatus.status.conditions.type are: "Available", "Progressing", and "Degraded"
-	// RcloneStatus.status.conditions.status are one of True, False, Unknown.
-	// RcloneStatus.status.conditions.reason the value should be a CamelCase string and producers of specific
-	// condition types may define expected values and meanings for this field, and whether the values
-	// are considered a guaranteed API.
-	// RcloneStatus.status.conditions.Message is a human readable message indicating details about the transition.
-	// For further information see: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#typical-status-properties
 	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
-
-	// PodName of the active rclone task.
-	Active string `json:"active"`
+	Active     string             `json:"active"`
 }
 
 // +kubebuilder:object:root=true
@@ -39,7 +31,7 @@ type Rclone struct {
 	Status RcloneStatus `json:"status,omitempty"`
 }
 
-type RcloneConfig struct {
+type RcloneConfiguration struct {
 	// +kubebuilder:validation:Required
 	Config string `json:"config,omitempty"`
 	// +kubebuilder:validation:Required

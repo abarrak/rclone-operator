@@ -17,9 +17,9 @@ type RcloneReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-// +kubebuilder:rbac:groups=clone.abarrak.com,resources=rclones,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=clone.abarrak.com,resources=rclones/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=clone.abarrak.com,resources=rclones/finalizers,verbs=update
+// +kubebuilder:rbac:groups=abarrak.com,resources=rclones,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:groups=abarrak.com,resources=rclones/status,verbs=get;update;patch
+// +kubebuilder:rbac:groups=abarrak.com,resources=rclones/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.

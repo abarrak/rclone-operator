@@ -36,7 +36,7 @@ var _ = Describe("Rclone Controller", func() {
 						Namespace: "default",
 					},
 					Spec: clonev1alpha1.RcloneSpec{
-						Config: clonev1alpha1.RcloneConfig{
+						Config: clonev1alpha1.RcloneConfiguration{
 							Config:  "[local]\n	type = local\n  noun = /tmp\n",
 							Command: "rclone --help",
 						},
